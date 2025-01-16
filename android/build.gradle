@@ -10,14 +10,7 @@ buildscript {
         google()
         jcenter()
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
-    }
     dependencies {
         classpath "com.android.tools.build:gradle:$agp_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -41,10 +34,14 @@ android {
         namespace "com.hiennv.flutter_callkit_incoming"
     }
 
-    kotlin {
-        jvmToolchain(17)
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
-    
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
